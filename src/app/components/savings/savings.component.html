@@ -1,0 +1,47 @@
+<!-- savings.component.html -->
+
+<app-navbar></app-navbar>
+
+    <div class="flex flex-col min-h-screen bg-gray-100 mx-auto pt-20 py-8 bg-white dark:bg-black transition-all duration-500 ease-in-out">
+
+      <h2 class="text-3xl font-bold text-gray-700 mt-10 mb-4 rounded-lg p-4
+      dark:text-rose-600">Savings Account</h2>
+
+      <br>
+
+      <div class="container mx-auto bg-white rounded-lg shadow-md dark:shadow-rose-950
+      p-4 mb-4 max-w-md justify-center items-center dark:bg-zinc-950 transition-all duration-500 ease-in-out">
+        <h3 class="text-xl font-semibold mb-2 flex justify-between items-center">
+          <span class="text-gray-600 dark:text-gray-300">Balance</span>
+          <span class="ml-auto dark:text-gray-300">{{ (savingsbalance$ | async | currency)}}</span>
+        </h3>
+      </div>
+
+      <div class="container flex mx-auto justify-center items-center">
+        <div class="md:flex justify-between gap-20 mt-2 mb-5">
+          <div class="bg-white rounded-lg shadow-md dark:shadow-rose-950 p-4 mb-4 max-w-xs justify-center items-center dark:bg-zinc-950 transition-all duration-500 ease-in-out">
+            <h3 class="text-xl font-semibold mb-2 flex justify-center items-center">
+              <span class="text-gray-600 dark:text-gray-300">Withdraw</span>
+            </h3>
+            <input [(ngModel)]="withdrawAmount" type="number" class="border p-2 rounded-md mb-2" placeholder="Amount">
+            <button (click)="withdraw()" class="bg-red-500 text-white p-2 rounded-md">Withdraw</button>
+          </div>
+      
+          <div class="bg-white rounded-lg shadow-md dark:shadow-rose-950 p-4 mb-4 max-w-xs justify-center items-center dark:bg-zinc-950 transition-all duration-500 ease-in-out">
+            <h3 class="text-xl font-semibold mb-2 flex justify-center items-center">
+              <span class="text-gray-600 dark:text-gray-300">Deposit</span>
+            </h3>
+            <input [(ngModel)]="depositAmount" type="number" class="border p-2 rounded-md mb-2" placeholder="Amount">
+            <button (click)="deposit()" class="bg-green-500 text-white p-2 rounded-md">Deposit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container bg-white dark:bg-zinc-950 mx-auto rounded-lg shadow-md dark:shadow-rose-950 p-4 mb-4 max-w-2xl
+      transition-all duration-500 ease-in-out">
+      <app-transaction-history [type]="'savings'"></app-transaction-history>
+      </div>
+
+    </div>
+
+    <app-footer></app-footer>

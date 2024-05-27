@@ -1,0 +1,41 @@
+<!-- signup.component.html -->
+
+<app-navbar-general></app-navbar-general>
+
+<div class="min-h-screen relative bg-cover bg-center" style="background-image: url('assets/photo/signup.jpg');">
+
+  <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+
+  <div class="signup-container relative">
+    <h2 class="pb-5 text-3xl font-semibold text-rose-700">Create an Account!</h2>
+    <form class="form-lg text-center" (submit)="signUp($event, email.value, fname.value, lname.value, password.value, confirmPassword.value)">
+      <div class="m-0 mx-auto my-auto">
+        <div class="form-group">
+          <label for="email" class="text-gray-300">First Name: </label>
+          <input class="border-2 border-black rounded-md px-7 text-center" type="text" #fname id="fname" name="fname" required>
+        </div>
+        <div class="form-group">
+          <label for="email" class="text-gray-300">Last Name: </label>
+          <input class="border-2 border-black rounded-md px-7 text-center" type="text" #lname id="lname" name="lname" required>
+        </div>
+        <div class="form-group">
+          <label for="email" class="text-gray-300">Email: </label>
+          <input class="border-2 border-black rounded-md px-7 text-center" type="email" #email id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label class="text-gray-300" for="password">Password:</label>
+          <input class="border-2 border-black rounded-md px-7 text-center ml-2" type="password" #password id="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <label class="text-gray-300" for="confirmPassword">Confirm Password:</label>
+          <input class="border-2 border-black rounded-md px-7 text-center ml-2" type="password" #confirmPassword id="confirmPassword" name="confirmPassword" required>
+        </div>
+      </div>
+      <button class="btn-signup" type="submit">Sign Up</button>
+    </form>
+  </div>
+
+</div>
+
+
+

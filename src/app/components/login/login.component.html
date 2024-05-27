@@ -1,0 +1,40 @@
+<!-- login.component.html -->
+
+<app-navbar-general></app-navbar-general>
+
+<div class="h-screen relative bg-cover bg-center" style="background-image: url('assets/photo/login.jpg');">
+
+  <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+
+  <div class="login-container relative">
+
+    <h2 class="pb-5 text-3xl font-semibold text-rose-700">Welcome!</h2>
+
+    <form class="form-lg text-center" (submit)="signIn($event, email.value, password.value)" > <!-- (submit)="signIn(email.value, password.value)" -->
+
+      <div class="m-0 mx-auto my-auto">
+
+        <div class="form-group">
+          <label for="username" class="text-gray-300">Username: </label>
+          <input class="border-2 border-black rounded-md px-7 text-center" type="email" #email id="username" name="username" required>
+        </div>
+
+        <div class="form-group">
+          <label class="ml text-gray-300" for="password">Password:</label>
+          <input class="border-2 border-black rounded-md px-7 text-center ml-2" type="password" #password id="password" name="password" required>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn-login">Login</button>
+    </form>
+
+    <p class="text-white text-xl font-semibold mt-4">or</p>
+
+    <button class="btn-login mt-3" routerLink="/signup">Signup</button>
+    
+
+  </div>
+  
+
+</div>

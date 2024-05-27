@@ -1,0 +1,13 @@
+<!-- transaction-history.component.html -->
+
+<h3 class="text-lg font-semibold mb-2 text-center text-gray-600 dark:text-gray-300">Transaction History</h3>
+
+<div class="text-gray-600 dark:text-gray-300"
+*ngIf="transactionHistory$ | async as transactions">
+  <div *ngFor="let transaction of transactions">
+    <p class="text-md font-semibold">Date: {{ transaction.timestamp | date:'short' }}</p>
+    <p>Type: {{ transaction.type }}</p>
+    <p class="font-bold">Amount: {{ transaction.amount | currency }}</p>
+    <hr>
+  </div>
+</div>
