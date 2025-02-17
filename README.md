@@ -1,4 +1,4 @@
-# Angular Banking App 
+# Angular Banking
 
 A modern banking application built with **Angular** and **Node.js**, integrated with **Firebase** for authentication, real-time data sync, and cloud functions.  
 
